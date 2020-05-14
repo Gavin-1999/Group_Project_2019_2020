@@ -1,0 +1,89 @@
+<!Doctype html>
+<html>
+<head>
+    <title>College Campus Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <style>
+
+        #map {position: absolute; top: 0; bottom: 0; left: 0; right:0; }
+
+    </style>
+</head>
+    <body>
+
+    <div id = "map"></div>
+    <script>
+        //layer that is the map
+        var map = L.map('map').setView([53.405219, -6.378315],20);
+        L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=UOyF2vinFDtSkfZTFNxy', {
+            attribution: '<a href="https://www.maptiler.com/licence/maps/"target="_blank"> Maptiler</a> <a href="https://www.openstreetmap.org/copyright" ' +
+                'target="_blank">OpenStreetMap</a>',
+
+        }).addTo(map);
+
+        //makers
+        var F_BlockMarker = L.marker([53.404692, -6.378388]).addTo(map);
+        F_BlockMarker.bindPopup("<b>C Block</b>").openPopup();
+
+        var E_BlockMarker = L.marker([53.405155, -6.377607]).addTo(map);
+        E_BlockMarker.bindPopup("<b>E Block</b>").openPopup();
+
+        var D_BlockMarker = L.marker([53.405584, -6.377135]).addTo(map);
+        D_BlockMarker.bindPopup("<br> D Block</br>").openPopup();
+
+        var A_BlockMarker = L.marker([53.406313, -6.376561]).addTo(map);
+        A_BlockMarker.bindPopup("<br>A Block</br>").openPopup();
+
+        var C_BlockMarker = L.marker([53.405446, -6.378632]).addTo(map);
+        C_BlockMarker.bindPopup("<br> C Block</br>").openPopup();
+
+        var LINC_BUILDING_Marker = L.marker([53.406373, -6.379893]).addTo(map);
+        LINC_BUILDING_Marker.bindPopup("<br> LINC Building</br>").openPopup();
+
+        var Sports_Block_Marker = L.marker([53.405800, -6.381330]).addTo(map);
+        Sports_Block_Marker.bindPopup("<br> Sports Block</br>").openPopup();
+
+        var Connect_Building = L.marker([53.404795, -6.379635]).addTo(map);
+        Connect_Building.bindPopup("<br> Connect Building</br>").openPopup();
+
+        // Initialize the Google Maps API v3
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.satellite
+        });
+
+        var marker = null;
+
+        function autoUpdate() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var newPoint = new google.maps.LatLng(position.coords.latitude,
+                    position.coords.longitude);
+
+                if (marker) {
+                    // Marker already created - Move it
+                    marker.setPosition(newPoint);
+                }
+                else {
+                    // Marker does not exist - Create it
+                    marker = new google.maps.Marker({
+                        position: newPoint,
+                        map: map
+                    });
+                }
+
+                // Center the map on the new position
+                map.setCenter(newPoint);
+            });
+
+            // Call the autoUpdate() function every 5 seconds
+            setTimeout(autoUpdate, 5000);
+        }
+
+        autoUpdate()
+    </script>
+
+    </body>
+</html>
