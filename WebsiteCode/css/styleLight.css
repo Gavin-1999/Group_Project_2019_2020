@@ -1,0 +1,176 @@
+/********* CSS Document DARK MODE*********/
+* {
+	box-sizing: border-box;
+}
+h2{
+	margin-bottom: 6%;
+	font-size: 35px;
+	text-align:center;
+}
+
+@media only screen and (max-width:500px) {
+  /********* For mobile phones: *********/
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+/****** General Body CSS ******/
+body {
+	background-color: white;
+	color: #014463;
+}
+
+#footer{
+	position: relative;
+	margin: 10%;
+}
+
+.changeMode {
+	margin-left:25%;
+	margin-bottom: 1.5%;
+	background-color: transparent;
+	width: 50%;
+	border-radius: 15px;
+	border: 3px solid #014463;
+	padding: 2px;
+	transition-duration: 0.4s;
+}
+
+.changeMode a {
+	text-decoration: none;
+	color: #014463;
+}
+.changeMode a:hover {
+	color: white;
+}
+
+.changeMode:hover {
+	background-color: #014463
+}
+
+/*********CSS For Header*********/
+#logo{
+	align-items: center;
+	width: 50px;
+	display: inline;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 160px;
+}
+
+li {
+	display: inline;
+}
+
+/*********CSS For Index Page/Main Menu*********/
+.intro {
+	margin-left:20%;
+	margin-bottom: 1.5%;
+	background-color: transparent;
+	width: 60%;
+	border-radius: 15px;
+	border: 3px solid #014463;
+	padding: 10px;
+	transition-duration: 0.4s;
+}
+
+.intro a {
+	text-decoration: none;
+	color: #014463;
+}
+
+.intro a:hover {
+	color: white;
+}
+
+.introButton1 {
+	align-items: center;
+}
+
+.introButton2 {
+	align-items: center;
+}
+
+.intro:hover {
+	background-color: #014463;
+}
+
+/*********CSS For Student Menu*********/
+#imgSizing1 {
+	height: 100px;
+	margin-left:16%;
+}
+
+#imgSizing2 {
+	width: 110px;
+	margin-left:20%;
+}
+
+#imgSizing3 {
+	height: 80px;
+	width: 80px;
+	margin-left:27%;
+	margin-bottom: 8%;
+}
+
+#imgSizing4 {
+	height: 80px;
+	width: 100px;
+	margin-left:20%;
+	margin-bottom:5%;
+}
+
+.grid {
+	min-height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+}
+
+.grid > div {
+	display: flex;
+	flex-basis: calc(50% - 40px);
+	justify-content: center;
+	flex-direction: column;
+}
+
+.grid > div > div {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.option {
+	margin: 20px;
+}
+
+.optionBox1 {
+	align-items: center;
+}
+
+.optionBox2 {
+	align-items: center;
+}
+
+.optionBox3 {
+	align-items: center;
+}
+
+.optionBox4 {
+	align-items: center;
+}
+
+/*********CSS For Bus Timetable*********/
+table {
+	margin: auto;
+}
+td, th {
+	padding: 0px 7px 0px 7px;
+}
+
+td {
+	 border: 1px solid #014463;
+}
